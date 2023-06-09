@@ -1,0 +1,23 @@
+<h1>Add Books</h1>
+    <%=  form_with model: @book  do|form|  %>
+      <div class="mb-3">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :pages %>
+        <%= form.text_field :pages %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :author %>
+
+  <div class="form-group">
+    <%= form.select :author_id, options_for_select(@authors),
+                 {include_blank: "Select Author"},{required: true, class: "form-select "} %>
+  </div>
+      </div>
+      <div class="mb-3">
+        <%= form.submit "Add Book", class: "btn btn-primary" %>
+      </div>
+</div>
+<% end %>

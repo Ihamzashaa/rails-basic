@@ -1,0 +1,25 @@
+<h1>Edit Books</h1>
+<%= form_with model: @book, url: book_path, method: :patch, local: true do |form|  %>
+    <% if form.object.errors.any? %>
+      <div class="alert alert-danger">
+        <% form.object.errors.full_messages.each do |message| %>
+          <div> <%= message %> </div>
+        <% end %>
+    <%end %>
+    </div>
+  <div class="mb-3">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :pages %>
+    <%= form.text_field :pages %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+  <div class="mb-3">
+    <%= form.submit "Update Book", class: "btn btn-primary" %>
+  </div>
+<% end %>

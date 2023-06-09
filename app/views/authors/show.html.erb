@@ -1,0 +1,16 @@
+<table class="table table-info table-hover">
+  <tr >
+    <th colspan="10" class="display-6" >Author Details</th>
+  </tr>
+    <td> <b><%=  @author.name %></b>
+  <td> <%= button_to 'Delete', author_path(@author), method:  :delete, class: "btn btn-primary" %></td>
+  <td><%= button_to "Update", author_path(@author), method: :patch, class: "btn btn-primary" %></td>
+    </td>
+  <% @author.books.each do|book| %>
+  <tr >
+      <td> <%=  book.name %></td>
+    <td> <%= button_to 'Delete', book_path(book), method:  :delete, class: "btn btn-primary" %></td>
+    <td><%= button_to "Update", author_path(@author), method: :patch, class: "btn btn-primary" %></td>
+  <% end %>
+  </tr>
+</table>
